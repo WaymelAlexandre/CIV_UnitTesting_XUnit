@@ -6,16 +6,11 @@ namespace unittest
 {
     public class UnitTest1
     {
-        private const bool V = false;
-
         //Create Unit Tests using xUnit for the methods 
         // FibonnacciRec,
         // FactorialRec
         // PrimeCheckRec.
-
         RecursiveCalc Rec = new RecursiveCalc();
-
-
 
         [Fact]
         public void testNumIsFibona()
@@ -30,17 +25,13 @@ namespace unittest
         [Fact]
         public void TestIsPrimalTrue()
         {
-
             Assert.True(true.Equals(Rec.PrimeCheckRec(5, 5)));
-
         }
         [Theory]
         [InlineData(0)]
-        [InlineData(1)]
         public void Zero_test(int divisor)
         {
-            Assert.Throws<DivideByZeroException>(() => Rec.PrimeCheckRec(10000 ,divisor));
-
+            Assert.Throws<DivideByZeroException>(() => Rec.PrimeCheckRec(123456789 ,divisor));
         }
     }
 }
